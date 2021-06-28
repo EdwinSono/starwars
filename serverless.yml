@@ -14,17 +14,21 @@ provider:
   stage: dev
   region: us-east-1
 
-
 functions:
-  starwars:
-    handler: handler.vehicles
+  listVehicles:
+    handler: src/vehicles.list
     memorySize: 128
-    description: vehicles starwars.
+    description: vehicles starwars list.
     events:
       - http:
           path: vehicles
           method: get
           cors: true
+  saveVehicle:
+    handler: src/vehicles.save
+    memorySize: 128
+    description: vehicles starwars save.
+    events:
       - http:
           path: vehicles
           method: post
