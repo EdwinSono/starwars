@@ -1,0 +1,33 @@
+service: starwars
+app: starwars
+org: edwinsono
+
+frameworkVersion: '2'
+configValidationMode: off
+
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  role: arn:aws:iam::435545862549:role/starwars-dev
+  stage: dev
+  region: us-east-1
+
+
+functions:
+  starwars:
+    handler: handler.vehicles
+    memorySize: 128
+    description: vehicles starwars.
+    events:
+      - http:
+          path: vehicles
+          method: get
+          cors: true
+      - http:
+          path: vehicles
+          method: post
+          cors: true
+plugins:
+  - serverless-offline

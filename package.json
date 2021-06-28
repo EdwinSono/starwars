@@ -1,0 +1,16 @@
+{
+  "name": "startwars",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "deploy": "sls deploy -v",
+    "undeploy": "sls remove"
+  },
+  "dependencies": {
+    "moment-timezone": "^0.5.33",
+    "serverless": "^2.48.0"
+  },
+  "devDependencies": {
+    "serverless-offline": "^7.0.0"
+  }
+}
